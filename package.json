@@ -1,0 +1,30 @@
+{
+  "name": "serverFolder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "heroku-postbuild": "cd ClientFolder && npm install && npm run build",
+    "test": "jest",
+    "testy": "nodemon server.js | jest",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "g": "^2.0.1",
+    "grunt-cli": "^1.4.3",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "grunt": "^1.5.3",
+    "grunt-contrib-concat": "^2.1.0"
+  }
+}

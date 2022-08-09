@@ -1,0 +1,33 @@
+Step 1 : Create a normal component in react
+Step 2 : add "<div id="rootMain"></div>" to ur html website (index.html)
+Step 3.1 : add CDN's for react and Babel
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+            <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+Step 3.2 : add js lines to actually render React at root
+            Note : add these only to the MainComponent
+                const e = React.createElement;
+                const domContainer = document.getElementById('rootMain')
+                const root = ReactDOM.createRoot(domContainer);
+                root.render(e(MainComp));
+
+Step 3.3 : remove all exports and imports and just all of then as script tags
+            ex: 
+                import {ChatComp} from "./components/ChatComp"
+                changes to
+                <script src="http://localhost:3500/ChatComp.js" type="text/babel"></script>
+                (added before the MainComp.js Script tag)
+
+Step 3.4 : add any third party lib as a CDN or serve them from node js
+
+
+Step 4 : add React Component as script with type as "text/babel"
+            <script src="http://localhost:3500/MainJSX.js" type="text/babel"></script>
+            <link rel="stylesheet" href="MainComp.css">
+        Note : Babel loads scripts as a http request hence loading the 
+               component as static js will fail , so servr it from a simple
+               express js file as static asset ( see ./serverFolder )
+
+Step 5 : Move all styleSheets to site root
+Step 6 : run in browser by opening the index.html ( see SampleHtmlSite folder )
